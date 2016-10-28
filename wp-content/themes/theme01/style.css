@@ -1,0 +1,1216 @@
+/* -------------------------------------------------
+
+	全体
+
+------------------------------------------------- */
+body, html {
+	/*height: 100%; */
+}
+
+/* -------------------------------------------------
+
+	Common
+
+------------------------------------------------- */
+
+.clearfix::after{
+	content: "";
+	display:block;
+	clear: both;
+}
+
+/* -------------------------------------------------
+
+	Header
+
+------------------------------------------------- */
+header {
+	position:fixed;
+	top: 0;
+  	width:100%;
+	height:60px;
+	z-index: 99999;
+	background-color:#fff;
+}
+
+.header-logo {
+	float:left;
+	width:230px;
+	height:60px;
+	background-image:url("img/logo.png");
+	background-size: 230px,60px;
+}
+
+.header-logo:hover {
+	background-position:0 -60px; 
+}
+
+#gloval-navigation {
+	float: right;
+	padding-right: 15px;
+}
+
+.main-menue {
+	float:left;
+	list-style-type: none;
+}
+
+.main-menue > li {
+	float:left;
+}
+
+.main-menue > li > a {
+	display:block;
+	height:60px;
+	line-height: 60px;
+	text-align: center;
+	text-decoration:none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	font-weight:600;
+	padding:0 20px;
+}
+
+.main-menue > .col_odd > a {
+	color:#18717A;
+}
+
+.main-menue > .col_even > a {
+	color:#123259;
+}
+
+.main-menue > .col_odd > a:hover {
+	background-color: #18717A;
+	color:#fff;
+}
+
+.main-menue > .col_even > a:hover {
+	background-color: #123259;
+	color:#fff;
+}
+
+.main-menue > .col_odd.current-menu-item > a{
+	background-color: #18717A;
+	color:#fff;
+}
+
+.main-menue > .col_even.current-menu-item > a{
+	background-color: #123259;
+	color:#fff;
+}
+
+.sns-menue {
+	float:right;
+	list-style-type: none;
+}
+
+.sns-menue > li {
+	float:left;
+}
+
+.sns-menue > li > a {
+	display:block;
+	height:60px;
+	line-height: 60px;
+	text-align: center;
+	text-decoration:none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:600;
+	padding:0 5px;
+}
+
+.sns-menue li a {
+	color: #6089BF;
+}
+
+.sns-menue li a:hover {
+	color: #335D8C;
+}
+
+#mobile-navigation {
+	float:right;
+	padding-right: 15px;
+}
+
+#mobile-navigation a {
+	display:block;
+	line-height: 60px;
+	height:60px;
+	text-align: center;
+	text-decoration:none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:600;
+	color: #6089BF;
+    font-size: 24px;
+}
+
+#mobile-navigation a:hover {
+	color: #335D8C;
+}
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	#gloval-navigation {
+		display: block;
+	}
+
+	#mobile-navigation {
+		display: none;
+	}
+ 
+}
+/* [タブレット]スクリーンが600pxから959px  */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+	#gloval-navigation {
+		display: none;
+	}
+
+	#mobile-navigation {
+		display: block;
+	}
+  
+}
+/* [スマホ]スクリーンが599px以下 */
+@media screen and (max-width: 599px) {
+	#gloval-navigation {
+		display: none;
+	}
+
+	#mobile-navigation {
+		display: block;
+	}
+    
+}
+
+/* -------------------------------------------------
+
+sidr
+
+------------------------------------------------- */
+.sidr {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 210px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  left: auto;
+  right: -210px;
+  background-color:#EAF0F4;
+  z-index: 999999;
+}
+
+.sidr .main-menue {
+	width: 100%;
+}
+
+.sidr .main-menue > li {
+  width: 100%;
+  margin: 0;
+}
+
+.sidr .main-menue > li > a {
+	display: block;
+	line-height: 60px;
+	text-align: left;
+}
+
+.sidr .sns-menue {
+	width: 80%;
+	padding: 0 10%;
+}
+
+.sidr .sns-menue > li {
+  width: 33.3%;
+  margin: 0;
+}
+
+
+.sidr .sns-menue > li > a {
+	display: block;
+	line-height: 60px;
+	font-size: 20px;
+}
+
+/* -------------------------------------------------
+
+	Main
+
+------------------------------------------------- */
+.wrap {
+	margin-top: 60px; /*ヘッダーを固定するとその高さ分埋もれてしまう為*/
+}
+
+.main-container {
+	width: 100%;
+	height:100%;
+}
+
+/* -------------------------------------------------
+
+	Top
+
+------------------------------------------------- */
+
+.cd-fixed-bg {
+	position: relative;   
+	z-index: 0;
+ }
+
+.cd-fixed-bg > * {
+	position: absolute;
+	z-index: 1;
+}
+
+.cd-scrolling-bg {
+	width: 100%;
+}
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	 .cd-fixed-bg {
+		background-attachment: fixed;
+	}
+}
+/* [タブレット]スクリーンが600pxから959px  */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+	 .cd-fixed-bg {
+		background-attachment: scroll;
+	}
+}
+/* [スマホ]スクリーンが599px以下 */
+@media screen and (max-width: 599px) {
+	 .cd-fixed-bg {
+		background-attachment: scroll;
+	}
+}
+
+/* home */
+.home-container::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /*1920*1080の縦横比*/
+}
+
+.home-container {   
+	background-image: url("img/topimg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+.home-container h1 {
+ 	font-family: 'ChunkFiveRegular', sans-serif;
+ 	font-size: 10vw;
+ 	color: #fff;
+	left: 50%;
+	top: 50%;   
+	bottom: auto;   
+	right: auto;
+	-webkit-transform: translateX(-50%) translateY(-50%);   
+	-moz-transform: translateX(-50%) translateY(-50%);   
+	-ms-transform: translateX(-50%) translateY(-50%);   
+	-o-transform: translateX(-50%) translateY(-50%);   
+	transform: translateX(-50%) translateY(-50%);
+ }
+
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	 .home-container {
+		background-position: center 60px;	/*background-attachment: fixed;にするとずれる為対策*/
+	}
+}
+/* [タブレット]スクリーンが600pxから959px  */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+	 .home-container {
+		background-position: center center;
+	}
+}
+/* [スマホ]スクリーンが599px以下 */
+@media screen and (max-width: 599px) {
+	 .home-container {
+		background-position: center center;
+	}
+}
+
+/* Portfolio */
+.portfolio-container > h2 {
+	font-family: 'Baloo Bhaina', cursive;
+	font-size:6vw;
+	padding-top:20px;
+	text-align: center;
+}
+
+.portfolio-container > p {
+	font-family: 'Noto Sans Japanese', sans-serif;
+	font-weight:900;
+	font-size:14px;
+	text-align: center;
+}
+
+.portfolio-navigation {
+	padding:60px 0;
+}
+
+.portfolio-navigation > ul {
+	width: 100%;
+	list-style-type: none;
+}
+
+.portfolio-navigation > ul > li {
+	display:block;
+	float: left;
+	width:20%;
+	margin: 0 2.5%;
+
+}
+
+.portfolio-navigation > ul > li > a {
+	display:block;
+	left:0;
+	top:0;
+    width:100%;
+	height:100%;
+	text-decoration:none;
+	text-align:center;
+}
+
+.portfolio-menue-name > li > a {
+	font-family: 'Baloo Bhaina', cursive;
+	padding: 5px 0;
+	font-size: 3vw;
+	color: #000;
+}
+
+.portfolio-menue-icon > li {
+	position:relative;
+	height:100%;
+	padding-top:20%;
+}
+
+.portfolio-menue-icon > li > a {
+	position: absolute;
+	border-radius: 100px;
+	transition: border-radius .15s linear;
+}
+
+.portfolio-menue-icon > li > a:hover {
+	border-radius: 0;
+}
+
+.portfolio-menue-icon > li > a > img {
+	position: absolute;
+	width:50%;
+	height:50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+	text-align: center;
+}
+
+.portfolio-menue-icon > li > a > img {
+	max-width: 100%;
+	height: auto;
+}
+
+#panel-icon-01 > a {
+	background-color:#345484;
+
+}
+
+#panel-icon-02 > a {
+	background-color:#848263;
+
+}
+
+#panel-icon-03 > a {
+	background-color:#669ECC;
+
+}
+
+#panel-icon-04 > a {
+	background-color:#D6CEBD;
+
+}
+
+#factory {
+	position: relative;
+	left: 0;
+	right: 0;
+	width: 90%;
+	height:100%;
+	padding:15% 0 0;
+	margin:15px auto;
+}
+
+.brick {
+	position: absolute;
+	display: none;
+	width: 7%;
+	height: 50%;
+}
+
+.brick img {
+	position: absolute;
+	max-width: 100%;
+	height: auto;
+	bottom: 0;
+	left: 0;
+}
+
+#line_item {
+	position: absolute;
+	width: 90%;
+	height: 50%;
+	bottom:0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+#line_item img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	.portfolio-navigation > ul {
+		width: 960px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+
+	.portfolio-menue-name > li > a {
+		font-size: 24px;
+	}
+
+	#factory {
+		width: 820px;
+	}
+}
+
+/*Stop Animation Video*/
+.video-container {
+	background-image: url("img/video-bg.png");
+	background-size: cover;     
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.video-container > .pattern {
+    background-image: url("img/pattern.png");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+.video-container > h2 {
+	font-family: 'Baloo Bhaina', cursive;
+	font-size:6vw;
+	padding-top:20px;
+	color: #fff;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.youtube {
+	top: 120px;
+	left: 0;
+    right: 0;
+	margin: 0 auto;
+	text-align: center;
+	z-index: 10;
+ }
+
+.youtube > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-icon {
+	right: 0px;
+	bottom: 0px;
+	z-index: 10;
+}
+
+.youtube-icon > a {
+	display: block;
+	padding: 20px;
+	font-size: 60px;
+	color: #fff;
+}
+
+.youtube-icon > a:hover{
+	color: #6089BF;
+}
+
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	.video-container {
+		height: 700px;
+	}
+	.youtube {
+		width: 800px;
+		padding: 450px 0 0;
+ 	}
+}
+/* [タブレット]スクリーンが600pxから959px  */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+	 .video-container {
+		height: 500px;
+	}
+	.youtube {
+		width: 70%;
+		padding: calc(450 / 800 * 70%) 0 0;
+ 	}
+}
+/* [スマホ]スクリーンが599px以下 */
+@media screen and (max-width: 599px) {
+	 .video-container {
+		height: 400px;
+	}
+	.youtube {
+		width: 70%;
+		padding: calc(450 / 800 * 70%) 0 0;
+ 	}
+}
+
+
+/*Skill*/
+.skill-container {
+	position: relative;
+	width: 100%;
+	background-image:url("img/desk-bk.png");
+	background-size: cover;     
+	background-repeat: no-repeat;
+	background-position: center center;
+	overflow: hidden;
+}
+
+.opacity-cover {
+	position: absolute;
+	background-color:rgba(19,44,71,0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.skill-container > h2 {
+	position: absolute;
+	font-family: 'Baloo Bhaina', cursive;
+	font-size:6vw;
+	text-align: center;
+	padding-top:20px;
+	padding-bottom: 50px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+	color: #fff;
+	z-index: 10;
+}
+
+.skill-box {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.skill-box > p {
+	position: absolute;
+	width: 90%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:900;
+	font-size:3.5vw;
+	line-height: 7vw;
+	color: #D83625;
+	top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+	z-index: 10;
+	text-align: center;
+}
+
+.fontFlake {
+	position:absolute;
+	z-index:5;
+	position:block;
+}
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	.skill-container {
+		height: 600px;
+	}
+}
+/* [タブレット]スクリーンが600pxから959px  */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+	 .skill-container {
+		height: 400px;
+	}
+}
+/* [スマホ]スクリーンが599px以下 */
+@media screen and (max-width: 599px) {
+	 .skill-container {
+		height: 300px;
+	}
+}
+
+/*Instgram*/
+.instgram-container {
+	background-color: #ccc;
+	padding-bottom: 50px;
+}
+
+.instgram-container > h2 {
+	font-family: 'Baloo Bhaina', cursive;
+	font-size:6vw;
+	text-align: center;
+	padding-top:20px;
+	padding-bottom: 50px;
+	color: #000;
+}
+
+
+/* -------------------------------------------------
+
+	Page-head
+
+------------------------------------------------- */
+.page-head-container {
+	width: 100%;
+}
+
+.page-index {
+	height:80px;
+	width: 100%;
+}
+
+body.tax-taxportfolio .page-index,
+body.post-type-archive-postportfolio .page-index {
+	background-color: #18717A;
+}
+
+body.single-postabout .page-index,
+body.single-postcontact .page-index {
+	background-color: #123259;
+}
+
+.page-index > h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24px;
+	font-weight:600;
+	padding-left: 30px;
+	color: #fff;
+	line-height: 80px;
+	text-align: left;
+}
+.breadCrumb {
+	padding-left: 30px;
+	height: 60px;
+	font-family: sans-serif;
+	font-size: 12px;
+	line-height: 60px;
+}
+.breadCrumb > a {
+	text-decoration: none;
+	color: #000;
+}
+
+
+/* -------------------------------------------------
+
+	About Page
+
+------------------------------------------------- */
+.about-container {
+	width: 90%;
+	margin:0 5%;
+	padding-bottom: 50px;
+}
+
+.profile-block {
+	position: relative;
+	float: left;
+	top:0px;
+	margin:0px 10px;
+	max-width: 600px;
+	width: 100%;
+}
+
+
+.sns-block {
+	position: relative;
+	float: left;
+	top:195px;
+	margin:0 10px;
+	max-width: 300px;
+	width: 100%;
+}
+
+.hobby-block {
+	position: relative;
+	float: left;
+	top:97.5px;
+	margin:0 10px;
+	max-width: 450px;
+	width: 100%;
+}
+
+.block-stud {
+	position: absolute;
+	border-radius: 5px;
+	top:0px;
+	width: 20%;
+	height: 20%;
+	z-index: 10;
+	box-shadow:5px 5px 10px 0px #6b6b6b;
+}
+
+.block-stud-left {
+	left:10%;
+}
+
+.block-stud-right {
+	right:10%;
+}
+
+.block-body-back {
+	position: absolute;
+	border-radius: 3px;
+	top:8%;
+	left: 0px;
+	width: 100%;
+	height: 92%;
+	z-index: 15;
+	box-shadow:5px 5px 10px 0px #6b6b6b;
+}
+
+.block-body-front {
+	position: absolute;
+	border-radius: 3px;
+	top:11%;
+	left: 2%;
+	width: 98%;
+	height: 89%;
+	z-index: 20;
+}
+
+.block-01-dark{
+	background-color: #6089BF;
+}
+.block-01-light{
+	background-color: #6B97C6;
+}
+
+.block-02-dark{
+	background-color: #D6CEBD;
+}
+.block-02-light{
+	background-color: #DBD5CA;
+}
+
+.block-03-dark{
+	background-color: #3F5074;
+}
+.block-03-light{
+	background-color: #47597A;
+}
+
+.block-body-front > h3 {
+	font-family: 'Baloo Bhaina', cursive;
+	font-size:24px;
+	margin: 15px 15px;
+}
+
+.block-body-front dl {
+	margin: 15px 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:600;
+	color: #000;
+}
+
+.block-body-front dt {
+	float: left;
+	clear: both;
+    width: 130px;
+    padding:8px 5px;
+}
+
+.block-body-front dd {
+	float: left;
+	padding:8px 5px;
+}
+
+/* ########### 1580px以下 ########### */
+@media screen and (max-width: 1580px) {
+	.profile-block,.sns-block,.hobby-block{
+		float: none;
+	  	top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: 50px auto;
+	}
+}
+
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	.block-body-front dl {
+		font-size: 16px;
+	}
+}
+/* [タブレット]スクリーンが600pxから959px  */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+	.block-body-front dl {
+		font-size: 14px;
+	}
+}
+/* [スマホ]スクリーンが599px以下 */
+@media screen and (max-width: 599px) {
+	.block-body-front dl {
+		font-size: 11px;
+	}
+}
+
+/* -------------------------------------------------
+
+	Portfolio Page
+
+------------------------------------------------- */
+#portfolio-category {
+	position: fixed;
+	width: 195px;
+	z-index: 100;
+	padding-left: 30px;
+}
+
+#portfolio-category h4 {
+	font-family: 'Open Sans','Noto Sans Japanese', sans-serif;
+	font-weight:600;
+	font-size: 14px;
+	margin: 0 0 0 0;
+	padding: 3px 0;
+	color: #000;
+	background-color: #6089BF;
+}
+
+#portfolio-category ul {
+	list-style-type: none;
+}
+#portfolio-category ul li {
+	width: 100%;
+}
+
+#portfolio-category ul li a {
+	display:block;
+	height:50px;
+	width: 100%;
+	line-height: 50px;
+	text-align: left;
+	text-decoration:none;
+	font-family: 'Open Sans','Noto Sans Japanese', sans-serif;
+	font-size: 16px;
+	font-weight:300;
+	color: #000;
+	border-bottom:1px dotted #000;
+	background-color: #fff;
+}
+
+#portfolio-category ul li a:hover {
+	background-color:#EAF0F4;
+}
+
+
+.portfolio-archive-container {
+	padding-left: calc(30px + 195px + 15px) ;
+   	/*width : calc(100% - 30px - 195px - 15px - 15px) ;*/
+	/*background-color: #ccc;*/
+}
+
+/*.grid {
+	position: relative;
+}*/
+
+.grid_item {
+    margin-bottom: 46px;
+}
+
+.grid_item_img {
+	position: relative;
+	width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.grid_item_img a {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.grid_item_img img {
+	position: absolute;
+    display: block;
+	top: 0;
+	left: 0;
+    max-width: 100%;
+    width: 100%;
+	height: 100%;
+}
+
+.grid_item_text {
+	margin-top: 8px;
+	text-align: center;
+	color: #000;
+}
+
+.grid_item_text > h2 {
+	margin: 0;
+	font-family: 'Baloo Bhaina', cursive;
+	font-size:18px;
+	text-align: center;
+}
+
+
+/* [PC]スクリーンが960px以上 */
+@media screen and (min-width: 960px) {
+	.grid { 
+		width: 100%;
+	}
+	.grid_item_1col {
+		width: 160px;
+	}
+	.grid_item_2col {
+		width: 240px;
+	}
+	.grid_item_3col {
+		width: 360px;
+	}	
+	.grid_column_sizer {
+		width: 90px;
+	}
+	.grid_gutter_sizer {
+		width: 46px;
+	}
+	.grid_item_text {
+		visibility: hidden;
+	}
+	.grid_item:hover .grid_item_text {
+		visibility: visible;
+	}
+}
+/* [タブレット]スクリーンが600pxから959px  */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+	.grid { 
+		max-width: 480px; 
+		margin: 0 auto; 
+	}
+	.grid_column_sizer, .grid_item_1col, .grid_item_2col, .grid_item_3col { 
+		width: 47%; 
+	}
+
+	.grid_gutter_sizer {
+		width: 6%;
+	}
+	.grid_item_text {
+		visibility: visible;
+	}
+}
+/* [スマホ]スクリーンが599px以下 */
+@media screen and (max-width: 599px) {
+	.grid {
+		max-width: 240px;
+		margin: 0 auto;
+	}
+	.grid_column_sizer, .grid_item_1col, .grid_item_2col, .grid_item_3col {
+		width: 100%;
+	}
+	.grid_gutter_sizer {
+		width: 0%;
+	}
+	.grid_item_text {
+		visibility: visible;
+	}
+}
+
+
+/* -------------------------------------------------
+
+	Contact Page
+
+------------------------------------------------- */
+
+.contact-container {
+	position: relative;
+	height: 500px;
+	font-family: 'Noto Sans Japanese', sans-serif;
+	font-weight:600;
+	font-size:12px;
+}
+
+.form_table {
+	position: absolute;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:600;
+	font-size: 14px;
+	border-collapse: separate;
+	border-spacing: 10px 20px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 15px auto;
+}
+
+.form_table th {
+	display: table-cell;
+	vertical-align: top;
+	text-align: center;
+}
+
+.form_table td {
+	display: table-cell;
+	vertical-align: inherit;
+	text-align: center;
+}
+
+.form_table input,
+.form_table textarea {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 4px 6px;
+	font-size: 16px;
+	line-height: 24px;
+	border: 0;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    width: 100%;
+	height: auto;
+}
+
+.form_table textarea {
+	height: auto;
+}
+
+input.job_submit {
+	width: 100px;
+	height: 50px;
+	color: #fff;
+	border: 0;
+	background-color: #123259;
+}
+
+/* -------------------------------------------------
+
+	Footer
+
+------------------------------------------------- */
+footer {
+	width: 100%;
+	z-index: 99999;
+	background-color:#fff;
+}
+
+.footer-logo {
+	padding: 15px;
+	text-align: center;
+}
+
+.footer-logo > img {
+	width: 330px;
+	height: 75px;
+}
+
+
+.share-menue {
+	list-style-type: none;
+	padding: 15px 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width:180px;
+}
+
+.share-menue > li {
+	float: left;
+	margin: 0 5px;
+}
+
+.share-menue > li > a {
+	display: table-cell;
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 100px;
+	background-color: #3F5074;
+	color: #fff;
+
+	-moz-transition: -moz-transform .15s linear;
+    -webkit-transition: -webkit-transform .15s linear;
+    -o-transition: -o-transform .15s linear;
+    -ms-transition: -ms-transform .15s linear;
+    transition: transform .15s linear;
+}
+
+.share-menue > li > a:hover{
+	-webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.share-menue > li > a > i {
+	font-size: 24px;
+}
+
+.rights-statement {
+	bottom: 0px;
+	padding:15px 0;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	color:#3F5074;
+}
+
+
+ /*Fonts*/
+@font-face {
+	font-family:"ChunkFiveRegular";
+	src:
+	url("fonts/ChunkFive/Chunkfive.eot?") format("eot"),
+	url("fonts/ChunkFive/Chunkfive.woff") format("woff"),
+	url("fonts/ChunkFive/Chunkfive.ttf") format("truetype"),
+	url("fonts/ChunkFive/Chunkfive.svg#ChunkFive") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
